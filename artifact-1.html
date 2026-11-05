@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artifact 1: Four Things Had to Show Up at Once | Nikith Kota</title>
+  <meta name="description" content="An interactive history of AI for healthcare and public-sector leaders, with a four-question readiness check for any AI project.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><i style="background:var(--ideas)"></i><i style="background:var(--chips)"></i><i style="background:var(--data)"></i><i style="background:var(--money)"></i></span>Nikith Kota</a>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#value">Value</a></li>
+        <li><a href="index.html#artifacts" aria-current="page">Artifacts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="art-hero">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html#artifacts">Artifacts</a> / Artifact 1 · AI and ML Timeline</p>
+      <h1>Four Things Had to Show Up at Once: What 75 Years of AI History Teaches Leaders</h1>
+      <p class="audience"><b>Built for:</b> healthcare and public-sector leaders deciding whether an AI project is ready.</p>
+      <nav class="toc" aria-label="On this page">
+        <a href="#introduction">Introduction</a><a href="#description">Description</a><a href="#objective">Objective</a><a href="#process">Process</a><a href="#tools">Tools and Technologies Used</a><a href="#value">Value Proposition</a><a href="#references">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="tsec narrow" id="introduction">
+      <h2>Introduction</h2>
+      <p>Most AI timelines read like a highlight reel of geniuses. That's fun to watch, but it doesn't help a hospital administrator or an agency director decide whether the AI tool on their desk is ready to use.</p>
+      <p>This artifact retells the history of AI through one simple idea: AI only worked when four things showed up at the same time. Good <b style="color:var(--ideas)">ideas</b>, enough <b style="color:var(--chips)">computing power</b>, enough <b style="color:var(--data)">data</b>, and steady <b style="color:var(--money)">money</b>. When one was missing, progress stalled, sometimes for a decade. When all four lined up in 2012, everything changed. The good news for leaders is that the same four ingredients make a quick, practical test for any AI project today.</p>
+    </section>
+
+    <section class="tsec" id="description">
+      <div class="narrow">
+        <h2>Description</h2>
+        <p>The artifact has three parts you can use right on this page:</p>
+        <p><b>1. An interactive four-lane timeline (1950 to 2025).</b> Every milestone sits in the lane of the ingredient it added. Gray bands mark the two AI winters, hollow dots mark setbacks, and the dashed line marks 2012, the first year all four lanes lined up. Click any dot to read what happened.</p>
+        <p><b>2. The Four-Ingredient Check.</b> Four plain questions that turn the history into a test for your own AI project, with a lesson from history behind each one.</p>
+        <p><b>3. The full 13-slide timeline deck</b> in PowerPoint and PDF, with era-by-era detail, the causes and impacts of both AI winters, and a fact-check of a popular AI history video.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h3>The timeline</h3>
+          <div class="filters" role="group" aria-label="Show lane">
+            <button data-lane="all" aria-pressed="true">All lanes</button>
+            <button data-lane="ideas" aria-pressed="false"><i style="background:var(--ideas)"></i>Ideas</button>
+            <button data-lane="chips" aria-pressed="false"><i style="background:var(--chips)"></i>Chips &amp; Cloud</button>
+            <button data-lane="data" aria-pressed="false"><i style="background:var(--data)"></i>Data</button>
+            <button data-lane="money" aria-pressed="false"><i style="background:var(--money)"></i>Money</button>
+          </div>
+        </div>
+        <div class="scroller"><svg id="tl" role="img" aria-label="Four-lane timeline of AI milestones from 1950 to 2025"></svg></div>
+        <p class="hint">The scale stretches after 2000 because so much happened so fast. On a phone, swipe sideways to see it all.</p>
+        <div class="detail" id="detail" aria-live="polite"></div>
+      </div>
+
+      <div class="panel" id="check">
+        <div class="panel-head"><h3>The Four-Ingredient Check</h3></div>
+        <p>Before you fund an AI project, tick each ingredient you can honestly say is in place.</p>
+        <div class="check">
+          <label class="q"><input type="checkbox"><span><span class="tag" style="color:var(--ideas)">Ideas</span><span class="ask">Has this method worked on a problem like ours, outside of a demo?</span><span class="hist">History: the 1958 Perceptron was promised to walk and talk. The idea was real but about 54 years early.</span></span></label>
+          <label class="q"><input type="checkbox"><span><span class="tag" style="color:var(--chips)">Chips &amp; Cloud</span><span class="ask">Can we afford the computing power to run it every day, not just for the pilot?</span><span class="hist">History: 1970s programs worked on toy problems and choked on real ones because computers were too slow.</span></span></label>
+          <label class="q"><input type="checkbox"><span><span class="tag" style="color:var(--data)">Data</span><span class="ask">Do we have enough clean, labeled data that looks like our real work?</span><span class="hist">History: AlexNet needed ImageNet's 1.2 million training photos, labeled by about 49,000 people.</span></span></label>
+          <label class="q"><input type="checkbox"><span><span class="tag" style="color:var(--money)">Money &amp; Support</span><span class="ask">Are funding and leadership support committed past the first exciting result?</span><span class="hist">History: both AI winters began when the money left before the results arrived.</span></span></label>
+        </div>
+        <div class="verdict" aria-live="polite"><span class="score" id="verdict-score">0/4</span><p id="verdict-text"></p></div>
+      </div>
+
+      <figure>
+        <img class="slide-img" src="assets/timeline-preview.png" alt="Slide from the deck showing the four-lane timeline, AI winters, and the 2012 convergence line">
+        <figcaption>Slide 2 of the deck: the whole story on one page.</figcaption>
+      </figure>
+      <div class="downloads">
+        <a class="dl" href="assets/Nikith_Kota_AI_Timeline.pptx" download><span class="ext">PPTX</span><span><b>Timeline deck</b><span>13 slides, editable in PowerPoint</span></span></a>
+        <a class="dl" href="assets/Nikith_Kota_AI_Timeline.pdf" download><span class="ext">PDF</span><span><b>Timeline deck</b><span>Easy to share or print</span></span></a>
+        <a class="dl" href="assets/Four_Ingredient_Check.pdf" download><span class="ext">PDF</span><span><b>Four-Ingredient Check</b><span>One-page card for meetings</span></span></a>
+      </div>
+    </section>
+
+    <section class="tsec narrow" id="objective">
+      <h2>Objective</h2>
+      <p>To give non-technical leaders a fast, honest way to judge AI projects by learning from the field's own history, and to show how I research, fact-check, and explain technical topics in plain language.</p>
+    </section>
+
+    <section class="tsec narrow" id="process">
+      <h2>Process</h2>
+      <ol class="steps">
+        <li><b>Read the sources.</b> I started with a popular AI history video, an IEEE Computer Society article, and Our World in Data's history of AI, then checked key claims against original papers and records.</li>
+        <li><b>Fact-checked before building.</b> I found five claims in the video that didn't hold up. For example, it credits Geoffrey Hinton with inventing convolutional networks in 2006, but Yann LeCun was already using them in 1989.</li>
+        <li><b>Sorted the milestones.</b> I placed about 40 events into four lanes, one per ingredient, and marked both AI winters with their causes and impacts.</li>
+        <li><b>Found the pattern.</b> Both winters began when ideas ran ahead of the chips and data, and the money left. 2012 was the first year all four lanes lined up.</li>
+        <li><b>Built it twice.</b> I designed the full deck in PowerPoint, then rebuilt the timeline as an interactive web version for this site.</li>
+        <li><b>Tailored it for leaders.</b> I cut technical terms and added the Four-Ingredient Check, so the history becomes a tool someone can use in their next budget meeting.</li>
+        <li><b>Revised the concept.</b> My first draft compared lab dates with everyday-use dates. When I reread the assignment, I saw it didn't explain cloud computing or the causes of the winters well enough, so I rebuilt it around the four ingredients.</li>
+      </ol>
+    </section>
+
+    <section class="tsec narrow" id="tools">
+      <h2>Tools and Technologies Used</h2>
+      <div class="tools">
+        <div class="tool"><b>Microsoft PowerPoint</b><span>The 13-slide timeline deck, built with native shapes and charts</span></div>
+        <div class="tool"><b>HTML, CSS, and JavaScript</b><span>The interactive timeline and the Four-Ingredient Check</span></div>
+        <div class="tool"><b>GitHub Pages</b><span>Free hosting for this portfolio</span></div>
+        <div class="tool"><b>Claude (Anthropic)</b><span>Used to check dates against sources and help with layout code. Ideas, choices, and fact-checks are my own</span></div>
+        <div class="tool"><b>Research sources</b><span>Course readings plus original papers from NeurIPS, Nature, and IEEE</span></div>
+      </div>
+    </section>
+
+    <section class="tsec" id="value">
+      <div class="narrow"><h2>Value Proposition</h2></div>
+      <div class="vp-split">
+        <div class="vp-box">
+          <h3>Unique Value</h3>
+          <p>Instead of another list of dates, this artifact explains <i>why</i> AI stalled and why it took off, then turns that pattern into a test leaders can actually use. It also shows a habit I bring to every project: I checked the sources first and corrected five errors in a widely shared video before building anything on top of it.</p>
+        </div>
+        <div class="vp-box">
+          <h3>Relevance</h3>
+          <p>Hospitals and government agencies are pitched AI tools constantly, often with demos that look finished. The Four-Ingredient Check gives them four plain questions to ask before they commit money. That connects directly to my goal of helping healthcare and public-sector teams trust the data and decisions behind AI.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tsec narrow refs" id="references">
+      <h2>References</h2>
+      <p>Bhat, A. K. (2025, March 11). <i>The evolution of AI: From foundations to future prospects</i>. IEEE Computer Society. https://www.computer.org/publications/tech-news/research/evolution-of-ai</p>
+      <p>Deng, J., Dong, W., Socher, R., Li, L.-J., Li, K., &amp; Fei-Fei, L. (2009). ImageNet: A large-scale hierarchical image database. <i>2009 IEEE Conference on Computer Vision and Pattern Recognition</i>, 248–255.</p>
+      <p>Krizhevsky, A., Sutskever, I., &amp; Hinton, G. E. (2012). ImageNet classification with deep convolutional neural networks. <i>Advances in Neural Information Processing Systems, 25</i>.</p>
+      <p>LeCun, Y., Bottou, L., Bengio, Y., &amp; Haffner, P. (1998). Gradient-based learning applied to document recognition. <i>Proceedings of the IEEE, 86</i>(11), 2278–2324.</p>
+      <p>Putchuon. (2024, May 30). <i>The entire history of artificial intelligence (last 100 years)</i> [Video]. YouTube. https://www.youtube.com/watch?v=mSd9nmPM7Vg</p>
+      <p>Roser, M. (2022, December 6). <i>The brief history of artificial intelligence: The world has changed fast. What might be next?</i> Our World in Data. https://ourworldindata.org/brief-history-of-ai</p>
+      <p>Rumelhart, D. E., Hinton, G. E., &amp; Williams, R. J. (1986). Learning representations by back-propagating errors. <i>Nature, 323</i>(6088), 533–536.</p>
+      <p>Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., &amp; Polosukhin, I. (2017). Attention is all you need. <i>Advances in Neural Information Processing Systems, 30</i>.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Nikith Kota · Artifact 1 · AIML-500 Machine Learning Fundamentals · Indiana Wesleyan University</div>
+  </footer>
+  <script src="timeline.js"></script>
+</body>
+</html>
