@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artifact 2: A Checklist or a Trained Eye? | Nikith Kota</title>
+  <meta name="description" content="A case study and decision tool for choosing between traditional machine learning and deep learning, built for healthcare and public-sector leaders.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><i style="background:var(--ideas)"></i><i style="background:var(--chips)"></i><i style="background:var(--data)"></i><i style="background:var(--money)"></i></span>Nikith Kota</a>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#value">Value</a></li>
+        <li><a href="index.html#artifacts" aria-current="page">Artifacts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="art-hero">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html#artifacts">Artifacts</a> / Artifact 2 · Machine Learning vs. Deep Learning</p>
+      <h1>A Checklist or a Trained Eye? How to Choose Between Machine Learning and Deep Learning</h1>
+      <p class="audience"><b>Built for:</b> healthcare and public-sector leaders, and the analysts who advise them, deciding what kind of AI a problem actually needs.</p>
+      <nav class="toc" aria-label="On this page">
+        <a href="#introduction">Introduction</a><a href="#description">Description</a><a href="#objective">Objective</a><a href="#process">Process</a><a href="#tools">Tools and Technologies Used</a><a href="#value">Value Proposition</a><a href="#references">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="tsec narrow" id="introduction">
+      <h2>Introduction</h2>
+      <p>AI pitches love the word "deep." More layers sound like more intelligence, so it's easy to assume deep learning is always the better buy. It isn't. Pick a model that's too simple and it misses what matters. Pick one that's too complex and you pay more for a system nobody can explain, sometimes with no gain in accuracy at all.</p>
+      <p>This artifact compares two real systems that sit on opposite sides of that choice: a county that values 1.1 million homes with traditional machine learning, and an FDA-authorized eye screening tool built on deep learning. Then it turns the comparison into four plain questions anyone can ask before a model gets built, bought, or funded. The short version is one question: <b>where does the knowledge for this problem live?</b></p>
+    </section>
+
+    <section class="tsec" id="description">
+      <div class="narrow">
+        <h2>Description</h2>
+        <p>The artifact has three parts you can use right on this page:</p>
+        <p><b>1. The Fit Finder.</b> Answer four questions about your own problem and see whether it leans toward traditional machine learning or deep learning. You can also load either case study to see how it scores.</p>
+        <p><b>2. Two real case studies, side by side,</b> with the numbers behind each choice and what would break if you swapped the approaches.</p>
+        <p><b>3. The full report and a one-page guide.</b> The report has the complete evidence and references. The guide is a single sheet you can bring into a meeting.</p>
+      </div>
+
+      <div class="panel" id="finder">
+        <div class="panel-head">
+          <h3>The Fit Finder</h3>
+          <div class="filters" role="group" aria-label="Load an example">
+            <button type="button" data-preset="homes" aria-pressed="false"><i style="background:var(--ideas)"></i>Load: Cook County homes</button>
+            <button type="button" data-preset="eyes" aria-pressed="false"><i style="background:var(--data)"></i>Load: Retina screening</button>
+            <button type="button" data-preset="clear" aria-pressed="false">Clear</button>
+          </div>
+        </div>
+        <p>Pick the answer that fits your problem best. There are no wrong answers, only honest ones.</p>
+        <div class="fit" id="fit"></div>
+        <div class="fit-result" aria-live="polite">
+          <div class="fit-bar" aria-hidden="true"><span class="b-ml" id="bar-ml"></span><span class="b-dl" id="bar-dl"></span></div>
+          <p class="fit-head" id="fit-head">Answer the four questions to see where your problem leans.</p>
+          <p class="fit-text" id="fit-text"></p>
+        </div>
+      </div>
+
+      <div class="cases">
+        <article class="case case-ml">
+          <p class="case-tag">Traditional machine learning</p>
+          <h3>Cook County, Illinois: valuing every home</h3>
+          <ul class="stats">
+            <li><b>1.1M</b><span>homes valued</span></li>
+            <li><b>~400K</b><span>past sales to learn from</span></li>
+            <li><b>~100</b><span>known facts per home</span></li>
+          </ul>
+          <p><b>Why it fits:</b> the data is already a table of facts like size, age, and location, and every owner can appeal, so each value is broken down feature by feature with SHAP values. The office uses a gradient-boosted tree model (LightGBM) and publishes its code.</p>
+          <p><b>Why not deep learning:</b> the office "can only access the outside of buildings," so there are no photos or raw data for a deep model to learn from. It tested neural networks and kept the simpler, faster, more accurate model.</p>
+        </article>
+        <article class="case case-dl">
+          <p class="case-tag">Deep learning</p>
+          <h3>IDx-DR: screening for diabetic eye disease</h3>
+          <ul class="stats">
+            <li><b>87%</b><span>of people with disease flagged</span></li>
+            <li><b>90%</b><span>of healthy people cleared</span></li>
+            <li><b>900</b><span>patients, 10 primary care offices</span></li>
+          </ul>
+          <p><b>Why it fits:</b> a retina photo is raw pixels with no column names, and early signs of disease are tiny and vary from camera to camera. A convolutional neural network learns those patterns from huge sets of graded images.</p>
+          <p><b>Why not traditional ML:</b> someone would have to hand-write rules for every kind of lesion. Researchers tried that for years, and adding deep learning to their hand-built program improved detection.</p>
+        </article>
+      </div>
+      <p class="catch"><b>The catch:</b> deep learning is only as good as its pictures. When Google tested its own eye screening system in 11 clinics in Thailand, dim lighting and blurry photos got images rejected and sent patients on unneeded trips, until eye specialists started reviewing those images first. The right model still needs the right setting.</p>
+
+      <figure>
+        <img class="slide-img" src="assets/ml-dl-four-questions.png" alt="The four-question guide. Each question shows when the answer leans toward traditional machine learning and when it leans toward deep learning, with the home value and retina screening examples marked.">
+        <figcaption>The four questions from the report, with both case studies marked. The last row sums it up.</figcaption>
+      </figure>
+      <div class="downloads">
+        <a class="dl" href="assets/ML_or_DL_One_Page_Guide.pdf" download><span class="ext">PDF</span><span><b>One-page guide</b><span>Four questions plus both examples</span></span></a>
+        <a class="dl" href="assets/Kota_ML_vs_DL_Report.pdf" download><span class="ext">PDF</span><span><b>Full case study report</b><span>Evidence, swap test, and references</span></span></a>
+        <a class="dl" href="assets/Kota_ML_vs_DL_Report.docx" download><span class="ext">DOCX</span><span><b>Report in Word</b><span>Editable version</span></span></a>
+      </div>
+    </section>
+
+    <section class="tsec narrow" id="objective">
+      <h2>Objective</h2>
+      <p>To show that I can tell traditional machine learning and deep learning apart in real systems, explain why each one fits its problem and why the other doesn't, and give non-technical leaders a fast, honest way to make the same call themselves.</p>
+    </section>
+
+    <section class="tsec narrow" id="process">
+      <h2>Process</h2>
+      <ol class="steps">
+        <li><b>Started from the lesson.</b> The course compares machine learning to handing a student a checklist and deep learning to teaching the student to read. I picked one example of each: house price prediction and image recognition with a convolutional neural network.</li>
+        <li><b>Chose real systems from my two worlds.</b> I wanted one public-sector case and one healthcare case, since those are the audiences I want to serve. That led me to the Cook County Assessor's Office and IDx-DR.</li>
+        <li><b>Went to primary sources.</b> I read the county's published model documentation, the IDx-DR clinical trial, Google's 2016 eye screening study, and a field study of a similar system in Thai clinics, and I checked every number against its source.</li>
+        <li><b>Built a four-question test.</b> Data type, need for explanation, amount of labeled data, and the cost of a mistake. I scored both systems on all four.</li>
+        <li><b>Ran a swap test.</b> I asked what would break if each system used the other approach. That made the reasoning concrete instead of just a list of pros and cons.</li>
+        <li><b>Looked for the downside.</b> I didn't want a story where deep learning simply wins, so I included where it stumbled in real clinics and why the county turned down neural networks.</li>
+        <li><b>Rebuilt it for this audience.</b> The class version was a nine-page report written for my instructor. For leaders, I added the Fit Finder and the one-page guide, cut the jargon, and kept the report as a download for anyone who wants the evidence.</li>
+      </ol>
+    </section>
+
+    <section class="tsec narrow" id="tools">
+      <h2>Tools and Technologies Used</h2>
+      <div class="tools">
+        <div class="tool"><b>Microsoft Word</b><span>The full case study report in APA format, with a comparison table and figure</span></div>
+        <div class="tool"><b>HTML, CSS, and JavaScript</b><span>The interactive Fit Finder, the one-page guide, and this page</span></div>
+        <div class="tool"><b>GitHub Pages</b><span>Free hosting for this portfolio</span></div>
+        <div class="tool"><b>Claude (Anthropic)</b><span>Used to help find and check sources and to help with layout code. The examples, the four-question test, and the judgments are my own</span></div>
+        <div class="tool"><b>Research sources</b><span>The county's open-source model documentation, an FDA pivotal trial, JAMA, and a CHI field study</span></div>
+      </div>
+    </section>
+
+    <section class="tsec" id="value">
+      <div class="narrow"><h2>Value Proposition</h2></div>
+      <div class="vp-split">
+        <div class="vp-box">
+          <h3>Unique Value</h3>
+          <p>Most explanations of machine learning and deep learning stay abstract. This one tests both on two real systems with real numbers, shows the downside of each, and boils the choice down to one question a leader can remember: where does the knowledge live? It also shows the growth area I named at the start of this program, technical understanding, turned into something other people can use.</p>
+        </div>
+        <div class="vp-box">
+          <h3>Relevance</h3>
+          <p>Hospitals and government agencies are being sold "deep learning" as if more complex always means better. The wrong choice can mean a tax system no one can explain or a screening tool that misses disease. The Fit Finder and one-page guide help leaders ask the right question before money is spent, which is exactly the role I want to play: checking the claims before anything gets built on them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tsec narrow refs" id="references">
+      <h2>References</h2>
+      <p>Abràmoff, M. D., Lavin, P. T., Birch, M., Shah, N., &amp; Folk, J. C. (2018). Pivotal trial of an autonomous AI-based diagnostic system for detection of diabetic retinopathy in primary care offices. <i>npj Digital Medicine, 1</i>, Article 39. https://doi.org/10.1038/s41746-018-0040-6</p>
+      <p>Abràmoff, M. D., Lou, Y., Erginay, A., Clarida, W., Amelon, R., Folk, J. C., &amp; Niemeijer, M. (2016). Improved automated detection of diabetic retinopathy on a publicly available dataset through integration of deep learning. <i>Investigative Ophthalmology &amp; Visual Science, 57</i>(13), 5200–5206. https://doi.org/10.1167/iovs.16-19964</p>
+      <p>Beede, E., Baylor, E., Hersch, F., Iurchenko, A., Wilcox, L., Ruamviboonsuk, P., &amp; Vardoulakis, L. M. (2020). A human-centered evaluation of a deep learning system deployed in clinics for the detection of diabetic retinopathy. In <i>Proceedings of the 2020 CHI Conference on Human Factors in Computing Systems</i> (pp. 1–12). Association for Computing Machinery. https://doi.org/10.1145/3313831.3376718</p>
+      <p>Cook County Assessor's Office. (n.d.). <i>model-res-avm: Residential automated valuation model</i> [Computer software]. GitHub. https://github.com/ccao-data/model-res-avm</p>
+      <p>Gulshan, V., Peng, L., Coram, M., Stumpe, M. C., Wu, D., Narayanaswamy, A., Venugopalan, S., Widner, K., Madams, T., Cuadros, J., Kim, R., Raman, R., Nelson, P. C., Mega, J. L., &amp; Webster, D. R. (2016). Development and validation of a deep learning algorithm for detection of diabetic retinopathy in retinal fundus photographs. <i>JAMA, 316</i>(22), 2402–2410. https://doi.org/10.1001/jama.2016.17216</p>
+      <p>Indiana Wesleyan University. (n.d.). <i>Machine learning vs. deep learning</i> [Lesson]. AIML-500: Machine Learning Fundamentals. Brightspace.</p>
+      <p>The full report includes the complete reference list.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Nikith Kota · Artifact 2 · AIML-500 Machine Learning Fundamentals · Indiana Wesleyan University</div>
+  </footer>
+  <script src="fitfinder.js"></script>
+</body>
+</html>
