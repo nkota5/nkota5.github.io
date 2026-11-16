@@ -33,3 +33,4 @@
 .test { margin-top: 2px; }
 .games td { vertical-align: top; line-height: 1.45; }
 #trainer > p { max-width: 820px; }
+.ai-note { margin-top: 18px; font-size: 15px; color: var(--ink-2); background: var(--soft); border-left: 3px solid var(--ideas); border-radius: 8px; padding: 14px 16px; }
