@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artifact 3: Teach a Neural Network in Ten Minutes | Nikith Kota</title>
+  <meta name="description" content="A ten-minute lesson kit that helps leaders explain neural networks to their teams, with an interactive demo you can train yourself.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><i style="background:var(--ideas)"></i><i style="background:var(--chips)"></i><i style="background:var(--data)"></i><i style="background:var(--money)"></i></span>Nikith Kota</a>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#value">Value</a></li>
+        <li><a href="index.html#artifacts" aria-current="page">Artifacts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="art-hero">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html#artifacts">Artifacts</a> / Artifact 3 · Communicating AI for Learning</p>
+      <h1>Teach a Neural Network in Ten Minutes: A Lesson Kit for Leaders Introducing AI</h1>
+      <p class="audience"><b>Built for:</b> healthcare and public-sector leaders who need to explain AI to their teams before asking them to trust it.</p>
+      <nav class="toc" aria-label="On this page">
+        <a href="#introduction">Introduction</a><a href="#description">Description</a><a href="#objective">Objective</a><a href="#process">Process</a><a href="#tools">Tools and Technologies Used</a><a href="#value">Value Proposition</a><a href="#references">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="tsec narrow" id="introduction">
+      <h2>Introduction</h2>
+      <p>Most AI rollouts don't fail because the tool is bad. They stall because the people asked to use it were never told, in plain words, what it actually does. "It's a neural network" usually ends the conversation instead of starting one. People nod, stop asking questions, and quietly decide not to trust it.</p>
+      <p>This artifact is my answer to that problem: a ten-minute lesson any leader can run, built around something everyone understands. I help run the concession stands at our home football games, so I explain a neural network as a crew of volunteers guessing whether tonight will be busy. Then you get to watch the "crew" actually learn, right on this page.</p>
+    </section>
+
+    <section class="tsec" id="description">
+      <div class="narrow">
+        <h2>Description</h2>
+        <p>The kit has three parts:</p>
+        <p><b>1. The lesson handout.</b> A single printable page with a minute-by-minute plan, the diagram, a short worksheet, and answers to the questions people usually ask.</p>
+        <p><b>2. The Stand Crew trainer.</b> An interactive demo of one artificial "neuron" learning from its mistakes. Press the button and watch the dials change as it checks the receipts.</p>
+        <p><b>3. The original explanation.</b> My course discussion post, including the three rounds of AI prompting that shaped it.</p>
+      </div>
+
+      <figure>
+        <img class="slide-img" src="assets/nn-concession-diagram.png" alt="Diagram of a neural network as a concession stand crew: clues on the left, three volunteers in the middle, the stand manager on the right, and a dashed arrow showing the receipts pushing the dials back after the game.">
+        <figcaption>The core picture. Clues are the input layer, volunteers are the hidden layer, and the manager is the output layer. Checking the receipts is how it learns.</figcaption>
+      </figure>
+
+      <div class="panel" id="trainer">
+        <div class="panel-head">
+          <h3>The Stand Crew Trainer</h3>
+          <div class="filters"><button type="button" id="reset">Reset the dials</button></div>
+        </div>
+        <p>This is one volunteer. Each clue has a dial, and if the clues add up to <b>4 or more</b>, the volunteer calls "Busy!" Below are eight practice games with what really happened. Press the button to check the receipts: every wrong call nudges the dials for the clues in that game by 1.</p>
+        <div class="crew">
+          <div>
+            <p class="crew-label">The volunteer's dials (weights)</p>
+            <div class="dials" id="dials"></div>
+            <p class="crew-label" style="margin-top:18px">Try your own game</p>
+            <div class="test" id="test"></div>
+            <div class="test-out">Total: <b id="test-total">0</b> <span id="test-call" class="call">Quiet</span></div>
+          </div>
+          <div>
+            <div class="crew-top"><span id="rounds">Before any training</span><b id="score">6 of 8 right</b></div>
+            <div class="scroller"><table class="games">
+              <thead><tr><th>Game</th><th>Clues</th><th>Total</th><th>Volunteer said</th><th>What happened</th><th></th></tr></thead>
+              <tbody id="games"></tbody>
+            </table></div>
+            <button type="button" class="train" id="train">Check the receipts (train one round)</button>
+            <ul class="log" id="log" aria-live="polite"><li>Press the button to start training.</li></ul>
+          </div>
+        </div>
+        <p class="hint">The eight games are made-up practice examples for the demo, not real sales numbers. A real network does this with millions of dials and a computer doing the nudging.</p>
+      </div>
+
+      <div class="downloads">
+        <a class="dl" href="assets/Ten_Minute_Neural_Network_Lesson.pdf" download><span class="ext">PDF</span><span><b>Ten-minute lesson handout</b><span>Plan, diagram, worksheet, common questions</span></span></a>
+        <a class="dl" href="assets/nn-concession-diagram.png" download><span class="ext">PNG</span><span><b>The diagram</b><span>For slides or a whiteboard</span></span></a>
+        <a class="dl" href="assets/Kota_Neural_Network_Explainer_Post.pdf" download><span class="ext">PDF</span><span><b>Original course post</b><span>Full explanation and AI prompt rounds</span></span></a>
+      </div>
+    </section>
+
+    <section class="tsec narrow" id="objective">
+      <h2>Objective</h2>
+      <p>To show that I can take a complex AI idea and teach it simply enough that a non-technical team understands what it does, how it learns, and where it shouldn't be trusted, using the communication-for-learning strategies from the course.</p>
+    </section>
+
+    <section class="tsec narrow" id="process">
+      <h2>Process</h2>
+      <ol class="steps">
+        <li><b>Started with the course challenge.</b> The assignment asked for the best simple explanation of neural networks, built with a generative AI tool and the lesson's strategies for communicating to help people learn.</li>
+        <li><b>Rejected the first draft.</b> My first prompt got a textbook answer about "interconnected nodes inspired by the human brain." Accurate, but forgettable.</li>
+        <li><b>Grounded it in real life.</b> I rebuilt it around my concession stand and flipped the order so the story comes first and the technical terms come last.</li>
+        <li><b>Added a hands-on step and an honest limit.</b> A small math example people can do in their heads, plus a section on where the analogy breaks, including why my stand's six games of data are far too few for a neural network.</li>
+        <li><b>Turned a post into a kit.</b> For leaders, I wrote a minute-by-minute lesson plan, a worksheet, and answers to common questions on one printable page.</li>
+        <li><b>Made the learning visible.</b> I built the Stand Crew trainer so people can see "learning" happen instead of just reading about it, and I tested that the dials settle after a couple of rounds.</li>
+      </ol>
+    </section>
+
+    <section class="tsec narrow" id="tools">
+      <h2>Tools and Technologies Used</h2>
+      <div class="tools">
+        <div class="tool"><b>Claude (Anthropic)</b><span>Used over three prompt rounds to draft and revise the explanation, and to help code this page. The example, the lesson plan, and the final choices are mine</span></div>
+        <div class="tool"><b>HTML, CSS, and JavaScript</b><span>The interactive Stand Crew trainer and this page</span></div>
+        <div class="tool"><b>Diagram and PDF design</b><span>The network diagram and the printable one-page handout</span></div>
+        <div class="tool"><b>GitHub Pages</b><span>Free hosting for this portfolio</span></div>
+      </div>
+    </section>
+
+    <section class="tsec" id="value">
+      <div class="narrow"><h2>Value Proposition</h2></div>
+      <div class="vp-split">
+        <div class="vp-box">
+          <h3>Unique Value</h3>
+          <p>Most explanations of neural networks borrow the same picture of a brain or a dog learning tricks. This one uses an everyday decision people can feel (how much food to order) and lets them watch a neuron learn. It's also honest about the limits, which matters more than a perfect metaphor. Artifact 1 shows I can research AI and Artifact 2 shows I can judge which kind fits a problem. This one shows a third skill: teaching it so other people understand.</p>
+        </div>
+        <div class="vp-box">
+          <h3>Relevance</h3>
+          <p>In healthcare and government, staff are being asked to work next to AI tools they've never had explained. Leaders need a short, low-pressure way to open that conversation without slides or a data science degree. This kit gives them one they can print and run in a staff meeting, which fits my goal of helping leaders know what AI is ready for and what is still hype.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tsec narrow refs" id="references">
+      <h2>References</h2>
+      <p>Anthropic. (2026). <i>Claude</i> [Large language model]. https://claude.ai</p>
+      <p>Indiana Wesleyan University. (n.d.). <i>3.4 Discussion: Communicating for learning</i> [Lesson]. AIML-500: Machine Learning Fundamentals. Brightspace.</p>
+      <p>Indiana Wesleyan University. (n.d.). <i>Deep learning and neural networks</i> [Lesson slides]. AIML-500: Machine Learning Fundamentals. Brightspace.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Nikith Kota · Artifact 3 · AIML-500 Machine Learning Fundamentals · Indiana Wesleyan University</div>
+  </footer>
+  <script src="crew.js"></script>
+</body>
+</html>
