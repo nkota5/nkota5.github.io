@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artifact 4: The Data Readiness Gate | Nikith Kota</title>
+  <meta name="description" content="Twelve questions a team answers before it trains or launches a machine learning model, with a straight answer: Go, Go with conditions, Hold, or Stop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="gate.css?v=2">
+</head>
+<body>
+  <nav class="nav" aria-label="Main">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="dots" aria-hidden="true"><i style="background:var(--ideas)"></i><i style="background:var(--chips)"></i><i style="background:var(--data)"></i><i style="background:var(--money)"></i></span>Nikith Kota</a>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#value">Value</a></li>
+        <li><a href="index.html#artifacts" aria-current="page">Artifacts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="art-hero">
+    <div class="wrap">
+      <p class="crumb"><a href="index.html#artifacts">Artifacts</a> / Artifact 4 · Data Challenges in Machine Learning</p>
+      <h1>The Data Readiness Gate: Twelve Questions to Answer Before You Trust a Model</h1>
+      <p class="audience"><b>Built for:</b> healthcare and public-sector teams who get asked "is the data ready?" and need a better answer than a gut feeling.</p>
+      <nav class="toc" aria-label="On this page">
+        <a href="#introduction">Introduction</a><a href="#description">Description</a><a href="#objective">Objective</a><a href="#process">Process</a><a href="#tools">Tools and Technologies Used</a><a href="#value">Value Proposition</a><a href="#references">References</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="tsec narrow" id="introduction">
+      <h2>Introduction</h2>
+      <p>Almost every AI failure we studied this term started the same way. Not with a bad algorithm, but with data nobody questioned. A résumé screener that learned an old hiring habit. A model that scored great because its test was full of reviews it had already seen.</p>
+      <p>I work with healthcare data, and I've seen a clean-looking report turn out to be missing people. Nothing crashed. No error message popped up. The numbers were just quietly wrong, and decisions were being made on top of them. That's the kind of failure this artifact is built to catch: the kind that looks fine.</p>
+      <p>The Data Readiness Gate is twelve questions a team answers before it trains or launches a model. It comes out of the three scenarios I worked through with an AI coach in this workshop, and it gives a straight answer: <b>Go</b>, <b>Go with conditions</b>, <b>Hold</b>, or <b>Stop</b>.</p>
+    </section>
+
+    <section class="tsec" id="description">
+      <div class="narrow">
+        <h2>Description</h2>
+        <p>The gate checks three things, in the order they usually go wrong. <b>Clean:</b> is the data what you think it is? <b>Fair:</b> does it work for everyone it will touch? <b>Safe:</b> is it protected, governed, and watched?</p>
+        <p>Most checklists add up points. That's the wrong math for data. A dataset with perfect formatting and labels nobody checked doesn't earn a B. It fails. So five of the twelve questions are <b>stoppers</b>. One No on any of them means Stop, no matter how good the rest looks.</p>
+        <p>Try it on your own project, or load one of the course scenarios to see how it reads them.</p>
+      </div>
+
+      <div class="panel" id="gate-panel">
+        <div class="panel-head"><h3>The Data Readiness Gate</h3></div>
+        <p class="g-ex-label">Load an example</p>
+        <div class="filters" id="gate-examples"></div>
+        <p id="gate-note" aria-live="polite"></p>
+        <div class="gate">
+          <div id="gate-sections"></div>
+          <aside class="g-result" id="gate-result" aria-live="polite"></aside>
+        </div>
+      </div>
+
+      <div class="narrow" style="margin-top:34px">
+        <h3 style="font-family:var(--serif);font-size:24px;margin:0 0 6px">Three cases, three calls</h3>
+        <p>All three scenarios from my coaching session come out <b>Stop</b> as first pitched. That isn't me being harsh. It's why they make good practice. Here's what I'd check first in each, the trap I'd watch for, and what it would take to move forward.</p>
+      </div>
+      <div class="callcards">
+        <article class="callcard">
+          <span class="case-tag">Clean · ReviewPulse</span>
+          <h3>800,000 reviews and a team in a hurry</h3>
+          <dl>
+            <dt>Check first</dt><dd>Who the model is for, then whether star ratings really match what people wrote.</dd>
+            <dt>The trap</dt><dd>Cleaning away the messy reviews also cleans away the people who write them: slang, emoji, second languages.</dd>
+            <dt>To move forward</dt><dd>Keep the raw copy, audit the labels by hand, remove duplicates before splitting, and compare who is in the data before and after.</dd>
+          </dl>
+          <p class="verdict"><span>Stop</span>Unchecked labels</p>
+        </article>
+        <article class="callcard">
+          <span class="case-tag">Fair · TalentBridge</span>
+          <h3>Ten years of hiring, a new country, 10x volume</h3>
+          <dl>
+            <dt>Check first</dt><dd>What the label measures. "Was hired" is a record of past choices, not proof of who would do the job well.</dd>
+            <dt>The trap</dt><dd>A great test score that only proves the model learned the past, including its habits.</dd>
+            <dt>To move forward</dt><dd>A shadow pilot, error rates by group, a real appeal path, and enough people to handle ten times the reviews.</dd>
+          </dl>
+          <p class="verdict"><span>Stop</span>Even with safeguards: Hold</p>
+        </article>
+        <article class="callcard">
+          <span class="case-tag">Safe · Riverbend + Lakeside</span>
+          <h3>Two hospitals, sensitive records, different codes</h3>
+          <dl>
+            <dt>Check first</dt><dd>Whether the two datasets mean the same thing before choosing any privacy tool.</dd>
+            <dt>The trap</dt><dd>Treating federated learning like a lock. It changes what moves between hospitals, not what can leak.</dd>
+            <dt>To move forward</dt><dd>A shared data dictionary, federated learning with secure aggregation, a written agreement, and testing at each hospital separately.</dd>
+          </dl>
+          <p class="verdict"><span>Stop</span>No agreement yet</p>
+        </article>
+      </div>
+
+      <div class="downloads">
+        <a class="dl" href="assets/Data_Readiness_Gate_Checklist.pdf" download><span class="ext">PDF</span><span><b>The printable gate</b><span>All twelve questions on one page, for meetings</span></span></a>
+        <a class="dl" href="assets/Kota_Data_Challenge_Coaching_Summary.pdf" download><span class="ext">PDF</span><span><b>My coaching session summary</b><span>The AI coach's write-up of my three scenarios</span></span></a>
+        <a class="dl" href="assets/data-gate-talentbridge.png" download><span class="ext">PNG</span><span><b>Worked example</b><span>TalentBridge run through the gate</span></span></a>
+      </div>
+    </section>
+
+    <section class="tsec narrow" id="objective">
+      <h2>Objective</h2>
+      <p>To show I can spot the data problems that sink machine learning projects before they happen, covering quality, bias, privacy, security, and governance, and to turn that into a tool a non-technical team can actually use.</p>
+    </section>
+
+    <section class="tsec narrow" id="process">
+      <h2>Process</h2>
+      <ol class="steps">
+        <li><b>Learned the problems.</b> The 4.2 lesson covered the main data challenges: availability, quality, labeling, privacy, bias, and drift.</li>
+        <li><b>Made my own calls.</b> In 4.3 I worked through three scenarios with an AI coach that pushed back with follow-up questions instead of giving answers. I had to defend each decision.</li>
+        <li><b>Found the pattern.</b> Looking back at my answers, I kept asking the same few questions in every scenario. I pulled those out and tightened them into twelve. Two of them borrow the idea of a "datasheet" for every dataset, a written record of where the data came from and what was done to it (Gebru et al., 2021).</li>
+        <li><b>Changed the math.</b> My first draft scored each question and added them up. Then I realized a dataset with great formatting and unchecked labels would pass. So I made five questions stoppers.</li>
+        <li><b>Tested it on the cases.</b> All three scenarios came out Stop as pitched. Then I reran TalentBridge with every safeguard I had proposed. It only moved to Hold. That result taught me the most: safeguards built around a weak label don't fix the label.</li>
+        <li><b>Took the coach's feedback.</b> My session summary named one area to keep developing: uncertainty with small groups and rare conditions. So I rewrote question 6. Checking error rates by group now also means showing how many people are in each group, because a gap built on five cases might just be luck.</li>
+        <li><b>Made it printable.</b> Not every meeting has a laptop open, so the whole gate also fits on one page.</li>
+      </ol>
+    </section>
+
+    <section class="tsec narrow" id="tools">
+      <h2>Tools and Technologies Used</h2>
+      <div class="tools">
+        <div class="tool"><b>ChatGPT (OpenAI)</b><span>Ran the 4.3 Data Challenge Scenarios Coach, using the prompt provided by the course</span></div>
+        <div class="tool"><b>AI design assistant</b><span>Helped with the page layout and design, and the graphics and interface for the gate</span></div>
+        <div class="tool"><b>HTML, CSS, and JavaScript</b><span>The interactive gate and its stopper logic</span></div>
+        <div class="tool"><b>PDF design</b><span>The one-page printable version</span></div>
+        <div class="tool"><b>GitHub Pages</b><span>Free hosting for this portfolio</span></div>
+      </div>
+      <p class="ai-note"><b>AI usage statement:</b> For the 4.3 assignment, ChatGPT (OpenAI) served as the Data Challenge Scenarios Coach, using the prompt provided by the course. For the 4.5 portfolio assignment, an AI design assistant helped with the page layout and design, as well as the graphics and interface for the gate. The decisions in the three scenarios, the twelve questions, the stopper rule, and the decisions about what to keep or cut are my own, including the reflection and any other writing on the portfolio.</p>
+    </section>
+
+    <section class="tsec" id="value">
+      <div class="narrow"><h2>Value Proposition</h2></div>
+      <div class="vp-split">
+        <div class="vp-box">
+          <h3>Unique Value</h3>
+          <p>Most readiness checklists give you a score. This one gives you a decision, and it refuses to let good answers cover for a fatal one. It also tells you what to fix first, in plain words, and it was tested on real course cases instead of made-up perfect ones. My other artifacts cover AI's history, choosing the right kind of model, and teaching how it works. This one covers what comes before all of that: the data.</p>
+        </div>
+        <div class="vp-box">
+          <h3>Relevance</h3>
+          <p>In healthcare and government, bad data doesn't just mean a worse model. It means a patient flagged too late or a person denied help. One widely used hospital algorithm ranked patients by how much their care had cost in the past, so Black patients who were just as sick were flagged for extra care less often (Obermeyer et al., 2019). Better math alone wouldn't have caught that. A team that asked "does this label measure what we care about?" would have.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tsec narrow refs" id="references">
+      <h2>References</h2>
+      <p>Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., &amp; Crawford, K. (2021). Datasheets for datasets. <i>Communications of the ACM, 64</i>(12), 86–92. https://doi.org/10.1145/3458723</p>
+      <p>Indiana Wesleyan University. (n.d.). <i>4.2 Quiz: Data challenges</i> [Lesson]. AIML-500: Machine Learning Fundamentals. Brightspace.</p>
+      <p>Indiana Wesleyan University. (n.d.). <i>4.3 Assignment: Data challenge scenarios</i> [AI activity]. AIML-500: Machine Learning Fundamentals. Brightspace.</p>
+      <p>Obermeyer, Z., Powers, B., Vogeli, C., &amp; Mullainathan, S. (2019). Dissecting racial bias in an algorithm used to manage the health of populations. <i>Science, 366</i>(6464), 447–453. https://doi.org/10.1126/science.aax2342</p>
+      <p>OpenAI. (2026). <i>ChatGPT</i> [Large language model]. https://chatgpt.com</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Nikith Kota · Artifact 4 · AIML-500 Machine Learning Fundamentals · Indiana Wesleyan University</div>
+  </footer>
+  <script src="gate.js?v=2"></script>
+</body>
+</html>
